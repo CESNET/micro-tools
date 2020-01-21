@@ -3,7 +3,6 @@ package middleware
 import (
 	"context"
 	"crypto/tls"
-	"errors"
 	"fmt"
 	"net/http"
 	"strings"
@@ -12,11 +11,6 @@ import (
 	"github.com/CESNET/micro-tools/oidc"
 	goidc "github.com/coreos/go-oidc"
 	"golang.org/x/oauth2"
-)
-
-var (
-	// ErrInvalidToken is returned when the request token is invalid.
-	ErrInvalidToken = errors.New("invalid or missing token")
 )
 
 // newOIDCOptions initializes the available default options.

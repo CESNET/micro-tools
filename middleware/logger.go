@@ -20,6 +20,7 @@ func Logger(logger log.Logger) func(http.Handler) http.Handler {
 				Str("request", r.Header.Get("X-Request-ID")).
 				Str("proto", r.Proto).
 				Str("method", r.Method).
+				Str("remote", r.RemoteAddr).
 				Int("status", wrap.Status()).
 				Str("path", r.URL.Path).
 				Dur("duration", time.Since(start)).
